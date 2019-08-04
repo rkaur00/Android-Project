@@ -1,0 +1,116 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:paddingTop="@dimen/padding"
+
+    tools:context=".SharedSpace">
+
+    <TextView
+        android:id="@+id/sharedSpacelabel"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:paddingBottom="@dimen/padding"
+        android:text="Shared Space"
+        android:textSize="@dimen/heading_size" />
+
+    <TextView
+        android:id="@+id/desclabel"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:paddingBottom="@dimen/padding"
+        android:text="Save important information here to share with everyone"
+        android:textSize="@dimen/paragraph_size" />
+
+    <android.support.v7.widget.CardView
+        android:id="@+id/cardView1"
+
+        android:onClick="sharedAccounts"
+        android:layout_width="270dp"
+        android:layout_height="@dimen/card_height_whoAreYou"
+        android:layout_marginLeft="25dp"
+        android:layout_marginBottom="25dp"
+
+
+        app:cardBackgroundColor="@color/colorPrimary"
+        app:cardCornerRadius="13dp"
+
+       >
+
+        <LinearLayout
+            android:layout_width="268dp"
+            android:layout_height="95dp"
+            android:layout_marginLeft="1dp"
+            android:layout_marginRight="1dp"
+            android:background="@drawable/radius"
+            android:gravity="center_vertical"
+            android:paddingLeft="20dp">
+
+            <ImageView
+                android:id="@+id/imageView6"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:layout_gravity="center_vertical"
+                android:layout_marginLeft="30dp"
+                android:layout_marginRight="30dp"
+
+                app:srcCompat="@drawable/account_icon" />
+
+            <TextView
+                android:id="@+id/textView3"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Accounts" />
+
+        </LinearLayout>
+
+
+    </android.support.v7.widget.CardView>
+
+    <android.support.v7.widget.CardView
+        android:id="@+id/cardView2"
+        android:layout_marginLeft="25dp"
+
+        android:layout_marginBottom="25dp"
+
+        android:onClick="sharedContacts"
+        android:layout_width="270dp"
+        android:layout_height="@dimen/card_height_whoAreYou"
+        app:cardBackgroundColor="@color/colorPrimary"
+        app:cardCornerRadius="13dp"
+        >
+
+        <LinearLayout
+            android:layout_width="268dp"
+            android:layout_height="95dp"
+            android:layout_marginLeft="1dp"
+            android:layout_marginRight="1dp"
+            android:background="@drawable/radius"
+            android:gravity="center_vertical"
+            android:paddingLeft="20dp">
+
+            <ImageView
+                android:id="@+id/imageView7"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:layout_gravity="center_vertical"
+                android:layout_marginLeft="30dp"
+                app:srcCompat="@drawable/phone_icon"
+                android:layout_marginRight="30dp"
+                />
+
+            <TextView
+                android:id="@+id/textView4"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Contacts" />
+        </LinearLayout>
+    </android.support.v7.widget.CardView>
+
+</LinearLayout>

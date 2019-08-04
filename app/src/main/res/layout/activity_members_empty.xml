@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="@dimen/padding"
+    tools:context=".MembersEmpty">
+
+    <TextView
+        android:id="@+id/labelFamilyName"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:paddingBottom="@dimen/padding"
+        android:text="Family Name"
+        android:textSize="@dimen/heading_size" />
+
+    <TextView
+        android:id="@+id/labelDescription"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:paddingBottom="@dimen/padding"
+        android:text="Add more members of your family to your myKlan group"
+        android:textSize="@dimen/paragraph_size" />
+
+    <Button
+        android:id="@+id/aboutButton"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/white_bg_button"
+        android:text="Let Us Know About You"
+
+        android:textColor="@color/loginButton" />
+
+</LinearLayout>
