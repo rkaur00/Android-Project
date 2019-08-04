@@ -102,9 +102,7 @@ String uid="";
                     rd.close();
                     final JSONObject resp = new JSONObject(response.toString());
                     if(resp.getBoolean("auth")){
-//                        Intent fp=new Intent(getApplicationContext(), MembersEmpty.class);
-//                        startActivity(fp);
-                        //Log.e(tag,"respnse: " + response);
+//
                         runOnUiThread(new Runnable() {
                             @Override
                             public void run() {
@@ -153,13 +151,6 @@ String uid="";
                     connection.setRequestMethod("GET");
                     connection.setRequestProperty("Authorization",authenticator);
 
-                    //connection.setRequestProperty("key","Authorization");
-                    //connection.setRequestProperty("value",authenticator);
-                    //connection.setRequestProperty("type","text");
-                    //connection.setRequestProperty("enabled","true");
-                    //connection.setRequestProperty("description","");
-                    //Log.e("test",connection.getHeaderField("value"));
-                    //connection.setRequestProperty("value","eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6InRlc3RAbXlrbGFuLmNvbSIsImlhdCI6MTU2MjcxMjc4MCwiZXhwIjoxNTYyNzk5MTgwfQ.IU9uNrzoiFYgkwp7b4MCWkHPIoCdGP0PIgnGBktmZ5I");
                     Log.e(tag,"getfamilydata: " + connection.getRequestProperty("Authorization"));
 
                     // Get Response
@@ -183,8 +174,7 @@ String uid="";
                     Log.e(tag,"the family Name: " + familyName);
                     Log.e(tag,"user ID: " + uid);
 
-                    //Log.e(tag,"the actual result: " + resp);
-                    //if(resp.getBoolean("auth")){
+
 
 
 

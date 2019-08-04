@@ -44,7 +44,7 @@ String userid="";
         authenticator = mPrefs.getString("authenticator", "");
         userid = mPrefs.getString("userId", "");
 
-        GetAccounts(userid);
+
         SharedPreferences account = getSharedPreferences("accounts",0);
         String accounts = account.getString("accounts", "");
         Log.e(tag,"Accountname: " + accounts);
@@ -76,62 +76,6 @@ String userid="";
     }
 
 
-    public void GetAccounts(final String uid)
-    {
-        AsyncTask.execute(new Runnable() {
-
-            @Override
-            public void run() {
-                HttpsURLConnection connection = null;
-                try {
-                    String url = "https://w4dtt62bhd.execute-api.us-east-1.amazonaws.com/dev/sharedSpace/getAccounts?userId="+userid;
-
-                    Log.e("url",url);
-
-
-                    URL loginEndPoint = new URL(url);
-                    connection = (HttpsURLConnection) loginEndPoint.openConnection();
-                    connection.setRequestMethod("GET");
-                    connection.setRequestProperty("Authorization",authenticator);
-
-                    Log.e(tag,"Authorization code " + connection.getRequestProperty("Authorization"));
-
-                    // Get Response
-                    String responseCode = String.valueOf(connection.getResponseCode());
-                    Log.e(tag,"the response: " + responseCode);
-                    InputStream is = connection.getInputStream();
-                    BufferedReader rd = new BufferedReader(new InputStreamReader(is));
-                    String line;
-                    StringBuffer response = new StringBuffer();
-                    while ((line = rd.readLine()) != null) {
-                        response.append(line);
-                        response.append('\r');
-                    }
-                    rd.close();
-                    Log.e(tag,"the response: " + response);
-                    String accounts=response.toString();
-                    SharedPreferences account = getSharedPreferences("accounts", 0);
-
-                    SharedPreferences.Editor editor = account.edit();
-                    editor.putString("accounts", accounts);
-                    editor.commit();
-
-
-                } catch (MalformedURLException e) {
-                    e.printStackTrace();
-                } catch (IOException e) {
-                    e.printStackTrace();
-                } finally {
-                    if(connection!=null){
-                        connection.disconnect();
-                    }
-                }
-            }
-        });
-
-
-
-    }
 
 
 }
